@@ -7,7 +7,7 @@ import java.util.List;
 
 @Component
 public class CarsList {
-    List<Car> list = new ArrayList<>();
+    private List<Car> list = new ArrayList<>();
 
     {
         list.add(new Car("Toyota","Seul",1234));
@@ -28,7 +28,7 @@ public class CarsList {
         this.list = list;
     }
 
-    public void add(Car car) {
+    public void addCar(Car car) {
         list.add(car);
     }
 

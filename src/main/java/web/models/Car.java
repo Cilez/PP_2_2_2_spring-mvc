@@ -1,9 +1,9 @@
 package web.models;
 
 public class Car {
-    String model;
-    String producer;
-    int vin;
+    private String model;
+    private String producer;
+    private int vin;
 
     public Car(String model, String producer, int vin) {
         this.model = model;

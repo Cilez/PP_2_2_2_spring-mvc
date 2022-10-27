@@ -12,20 +12,20 @@ import web.service.CarService;
 @Controller
 public class CarsController {
 
-    private CarService dao;
+    private CarService carService;
 
     @GetMapping(value = "/cars")
     public String printWelcomeCars(@RequestParam(value = "count", defaultValue = "5") int count, ModelMap model) {
-        if (dao.getAll().size() < count) {
-            count = dao.getAll().size();
+        if (carService.getAll().size() < count) {
+            count = carService.getAll().size();
         }
-        model.addAttribute("messages", dao.getFirst(count));
+        model.addAttribute("messages", carService.getFirst(count));
         return "cars";
     }
 
 
     @Autowired
-    public void setDao(CarService dao) {
-        this.dao = dao;
+    public void setCarService(CarService carService) {
+        this.carService = carService;
     }
 }
